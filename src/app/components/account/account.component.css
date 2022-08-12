@@ -1,0 +1,9 @@
+.navbar{
+    font-family: 'Edu SA Beginner', cursive;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(219, 219, 219);
+}
+.menu{
+    cursor: pointer;
+}

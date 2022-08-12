@@ -1,0 +1,41 @@
+<h1>CART</h1>
+<ng-container *ngIf="productss.length!=0" >
+<table class="table">
+    <tr>
+        <th class="item">Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+    </tr>
+    <ng-container *ngFor="let prod of productss">
+        <tr>
+            <td><img [src]="prod.prod.image" alt="">
+                <p>{{prod.prod.title}}</p>
+            </td>
+            <td class="price">{{prod.prod.price}}$</td>
+            <td><input #quantity class="quantity" type="number" [value]="prod.quantity" min="0" (change)="changeQuantity(prod, quantity.value)"></td>
+            <td class="total">{{(prod.prod.price * prod.quantity).toFixed(2)}}$</td>
+        </tr>
+    </ng-container>
+</table>
+
+
+<table class="totalTable">
+    <tr>
+        <th>Subtotal</th>
+        <td>{{subtotal.toFixed(2)}}$</td>
+    </tr>
+    <tr>
+        <th>Shipping</th>
+        <td>{{shipping.toFixed(2)}}$</td>
+    </tr>
+    <tr>
+        <th>TOTAL</th>
+        <td>{{(subtotal+shipping).toFixed(2)}}$</td>
+    </tr>
+</table>
+<div class="buttonContainer">
+<button class="checkButton" (click)="checkout()">CHECKOUT</button>
+</div>
+</ng-container>
+<H2 class="empty" *ngIf="productss.length==0">YOUR CART IS EMPTY</H2>

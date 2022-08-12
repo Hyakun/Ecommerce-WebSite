@@ -1,0 +1,17 @@
+<div *ngIf="itemRecived" class="productContainer">
+    <img [src]="product.image" alt="">
+    <div class="productDescription">
+        <h1>{{product.title}}</h1>
+        <h2 class="price">{{product.price}}$</h2>
+        <button class="addButton" (click)="addToCart()">ADD TO CART</button>
+        <div>
+            <label for="prodDesc">Description:</label>
+            <h3 id="prodDesc">{{product.description}}</h3>
+        </div>
+        <div class="ratings">
+            <h4>Ratings:</h4>
+            <label for="rating">{{product.rating.count}}</label>
+            <star-rating id="rating" [starType]="'svg'" [rating]="product.rating.rate" [readOnly]="true"></star-rating>
+        </div>
+    </div>
+</div>

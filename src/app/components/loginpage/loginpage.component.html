@@ -1,0 +1,32 @@
+<h1 class="pageTitle">SING IN</h1>
+<div class="container">
+
+    <form class="loginContainer" #form="ngForm" (submit)="login()">
+        <label for="email" class="labels">Email Address:</label>
+        <input type="email" id="email" name="email" class="inputText" [(ngModel)]="email" required email
+            #emailInput="ngModel">
+        <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+            <div *ngIf="emailInput.errors?.['email']">This is not a valid email!</div>
+            <div *ngIf="emailInput.errors?.['required']">Email is required!</div>
+        </div>
+        <label for="pass" class="labels">Password:</label>
+        <input type="password" name="password" id="password" class="inputText" [(ngModel)]="password" required minlength="8" #passInput="ngModel">
+        <div *ngIf="passInput.invalid && (passInput.dirty || passInput.touched)">
+            <div *ngIf="passInput.errors?.['required']">Password is required!</div>
+            <div *ngIf="passInput.errors?.['minlength']">Password should be atleast 8 characters!</div>
+        </div>
+        <button class="buttons" [disabled]="!form.valid" type="submit">SING IN</button>
+        <div *ngIf="wrongInput">Wrong email or password!</div>
+    </form>
+
+    <div class="createContainer">
+        <h2 style="margin: 0;">NEW CUSTOMER?</h2>
+        <h4 style="margin: 0;">Create an account with us and you'll be able to:</h4>
+        <ul>
+            <li>Check out faster</li>
+            <li>Save multiple shipping addresses</li>
+            <li>Access your order history</li>
+        </ul>
+        <button class="buttons" (click)="openCreateAcc()">CREATE ACCOUNT</button>
+    </div>
+</div>

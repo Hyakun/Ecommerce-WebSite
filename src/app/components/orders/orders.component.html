@@ -1,0 +1,13 @@
+<h1>ORDERS</h1>
+<div class="orders">
+    <div class="order" *ngFor="let order of orders; let i=index">
+        <div class="info">
+            <h3>Date:{{order.date}}</h3>
+            <h4>Address:{{order.address.address}}</h4>
+            <h5>Price:{{order.totalPrice}}$</h5>
+        </div>
+        <div class="products">
+            <app-product-card *ngFor="let prod of order.products" [needX]="false" [product]="prod"></app-product-card>
+        </div>
+    </div>
+</div>

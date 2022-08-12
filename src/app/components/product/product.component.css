@@ -1,0 +1,48 @@
+.productContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 10px auto;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+}
+.productDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family:'Edu SA Beginner', cursive ;
+    width: auto;
+    gap: 20px;
+    min-height: 500px;
+    max-width: 600px;
+}
+img{
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+}
+.addButton{
+    cursor: pointer;
+    width: 200px;
+    border:none;
+    font-size: 20px;
+    background: linear-gradient(130deg,rgb(219, 219, 219) 35%,rgb(189, 189, 189) 50%, rgb(219, 219, 219) 65%);
+    color: black;
+    padding: 15px;
+    font-family:'Edu SA Beginner', cursive;
+    font-weight: 700;
+    transition: background 0.5s ease;
+    margin: 0 auto;
+}
+.addButton:hover{
+    background-position:100px;
+}
+.price{
+    margin: 0 auto;
+}
+.ratings{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

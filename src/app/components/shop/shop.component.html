@@ -1,0 +1,15 @@
+<h1>SHOP</h1>
+<div class="sortMenu">
+    <button class="sortButton" (click)="goElectronics()">Electronics</button>
+    <button class="sortButton" (click)="goJewelery()">Jewelery</button>
+    <button class="sortButton" (click)="goMen()">Men's clothing</button>
+    <button class="sortButton" (click)="goWomen()">Women's clothing</button>
+    <div>
+        <label class="labelSort" for="sort">Sort:</label>
+         <select class="sortSelect" name="sort" id="sort" [(ngModel)]="sortType"  (change)="sortTypeSelected()"><!--(change)="sortTypeSelected()" -->
+            <option value="asc">ASC</option>
+            <option value="desc">DESC</option>
+        </select>
+    </div>
+</div>
+<app-products [products]="this.products"></app-products>

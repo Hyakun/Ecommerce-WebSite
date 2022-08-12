@@ -1,0 +1,21 @@
+img{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+.cardContainer{
+    font-family: 'Edu SA Beginner', cursive;
+    display:flex;
+    width: 250px;
+    gap: 10px;
+}
+.cardInfo{
+    font-weight: 700;
+    font-size: 15px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+p{
+    margin: 0;
+}

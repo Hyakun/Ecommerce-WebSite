@@ -1,0 +1,59 @@
+
+
+.grid-container{
+    display: grid;
+    margin: auto;
+    width: 75%;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.grid-item{
+    position: relative;
+    width: 1fr;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    max-height: 500px;
+    transition: transform  0.3s ease-out;
+    cursor: pointer;
+}
+
+.grid-item:hover{
+    transform: scale(0.95);
+}
+
+.grid-col-row-span{
+    grid-column: 1 / span 2;
+    grid-row:1 / span 2;
+}
+.grid-col-span{
+    grid-column: span 3;
+}
+.grid-row-span{
+    grid-row: span 2;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    z-index: 0;
+}
+.text-details{
+    padding: 0px 10px;
+    border-radius: 10px;
+    position: absolute;
+    color: white;
+    font-family:'Edu SA Beginner', cursive;
+    font-weight: 700;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: rgba(0, 0, 0, 0.400);
+}
+
+@media (max-width: 600px) {
+    .grid-container{
+        display: flex;
+        flex-direction: column;
+    }
+}

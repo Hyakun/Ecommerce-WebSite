@@ -1,0 +1,9 @@
+<div class="cardContainer">
+    <img [src]="product.prod.image" alt="">
+    <div class="cardInfo">
+        <p>{{product.prod.title}}</p>
+        <p>Quantity:{{product.quantity}}</p>
+        <p>{{product.prod.price}}$</p>
+    </div>
+    <fa-icon *ngIf="needX" style="cursor:pointer" [icon]="fax" (click)="deleteProduct()"></fa-icon>
+</div>

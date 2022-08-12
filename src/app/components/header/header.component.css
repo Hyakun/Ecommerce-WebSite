@@ -1,0 +1,143 @@
+
+.headerContainer {
+    display: flex;
+    background-color: black;
+    height: 60px;
+}
+
+.htitles {
+    position: relative;
+    color: rgb(199, 199, 199);
+    font-family: 'Edu SA Beginner', cursive;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0 5px;
+}
+.htitles:hover{
+    color:white;
+}
+
+.htitles::after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+.htitles:hover::after{
+    width: 100%;
+}
+
+
+.headerHalf {
+    display: flex;
+    width: 50%;
+    height: 60px;
+    margin: 0;
+    align-items: center;
+    gap: 10%;
+    justify-content: center;
+}
+
+.cart {
+    position: relative;
+}
+
+.greenCircle {
+    position: absolute;
+    background-color: greenyellow;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    right: -5px;
+    top: -5px;
+}
+
+.hIcons {
+    color: lightgray;
+    font-size: 20px;
+    cursor: pointer;
+}
+.searchBar{
+    position:relative;
+    background-color: black;
+    height: 40px;
+    border-top: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+    animation-name: openSearch;
+    animation-duration: 0.2s;
+}
+.searchItems{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+    width: 400px;
+    padding: 10px;
+    top: 40px;
+    box-shadow: 0px 1000px 1000px 1000px rgba(0, 0, 0, 0.404);
+}
+h5{
+    cursor: pointer;
+    margin: 10px 0;
+    font-family: 'Edu SA Beginner', cursive;
+}
+h5:hover{
+    text-decoration: underline;
+}
+.searchInput{
+    background-color: black;
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Edu SA Beginner', cursive;
+    width: 30%;
+    min-width: 250px;
+}
+.searchInput:focus{
+    outline: none;
+}
+.cartOpen{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: 'Edu SA Beginner', cursive;
+    gap: 10px;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px 0px;
+    animation-name: openCart;
+    animation-duration: 0.2s;
+}
+
+.cartButton{
+    cursor: pointer;
+    border:none;
+    background: linear-gradient(130deg,rgb(95, 94, 94) 35%,rgb(70, 69, 69) 50%, rgb(95, 94, 94) 65%);
+    margin: 0px 10px;
+    color: white;
+    padding: 15px;
+    font-family:'Edu SA Beginner', cursive;
+    font-weight: 700;
+    transition: background 0.5s ease;
+}
+.cartButton:hover{
+    background-position:50px;
+}
+
+@keyframes openCart{
+    from {height: 0px; overflow: hidden;}
+    to {height: 30px;}
+}
+@keyframes openSearch{
+    from{height: 0px; overflow: hidden;}
+    to{height: 40px;}
+}

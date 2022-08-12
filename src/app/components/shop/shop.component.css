@@ -1,0 +1,56 @@
+
+
+.sortButton{
+    cursor: pointer;
+    width: 200px;
+    border:none;
+    font-size: 20px;
+    background: linear-gradient(130deg,rgb(219, 219, 219) 35%,rgb(189, 189, 189) 50%, rgb(219, 219, 219) 65%);
+    margin: 0px 10px;
+    color: black;
+    padding: 15px;
+    font-family:'Edu SA Beginner', cursive;
+    font-weight: 700;
+    transition: background 0.5s ease;
+}
+.sortButton:hover{
+    background-position:100px;
+}
+h1{
+    text-align: center;
+    font-family: 'Edu SA Beginner', cursive;
+    font-weight: 700;
+    font-size: 50px;
+}
+.sortMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.sortSelect{
+    font-family: 'Edu SA Beginner', cursive;
+    width: 200px;
+    height: 57px;
+    border:none;
+    border-bottom: 1px solid black;
+    outline:none;
+}
+.labelSort{
+    font-family: 'Edu SA Beginner', cursive;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+
+@media (max-width:600px){
+    .sortButton{
+        width: 400px;
+    }
+    .sortButton:hover{
+        background-position:200px;
+    }
+}
+

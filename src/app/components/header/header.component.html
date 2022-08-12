@@ -1,0 +1,35 @@
+<div class="headerContainer">
+    <div class="headerHalf">
+        <fa-icon [icon]="faHeadset" style="color:white; font-size: 50px;"></fa-icon>
+        <span class="htitles" (click)="navigateHome()">Basically</span>
+        <span class="htitles" (click)="navigateShop()">Shop</span>
+    </div>
+    <div class="headerHalf">
+        <fa-icon class="hIcons" title="Sing In" [icon]="faPerson" (click)="openLogin()"></fa-icon>
+        <fa-icon class="hIcons" title="Search" [icon]="faMagnifyingGlass" (click)="toggleSearch()"></fa-icon>
+        <span class="cart" (click)="toggleCart()">
+            <fa-icon class="hIcons" title="Cart" [icon]="faCartShopping"></fa-icon>
+            <div [class.greenCircle]="itemsInCart"></div>
+        </span>
+    </div>
+</div>
+<div *ngIf="searchON" class="searchBar">
+    <input class="searchInput" type="text" placeholder="Search" [ngModel]="searchInput" (ngModelChange)="search($event)">
+    <fa-icon class="hIcons" (click)="toggleSearch()" [icon]="faX"></fa-icon>
+    <div class="searchItems" *ngIf="searching">
+        <h5 *ngFor="let prod of productsSearch" (click)="navigate(prod.id)">{{prod.title}}</h5>
+    </div>
+</div>
+<div *ngIf="cartON" class="cartOpen">
+        <div>
+            <h3 style="display: inline; margin-right: 100px;">Shopping Cart</h3>
+            <fa-icon class="hIcons" (click)="toggleCart()" [icon]="faX"></fa-icon>
+        </div>
+        <ng-container *ngFor="let prod of products">
+            <app-product-card [product]="prod" [needX]="true"></app-product-card>
+        </ng-container>
+        <div *ngIf="products.length != 0">
+            <button class="cartButton" (click)="checkout()">CHECKOUT</button>
+            <button class="cartButton" (click)="viewCart()">VIEW CART</button>
+        </div>
+</div>

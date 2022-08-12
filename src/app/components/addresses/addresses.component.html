@@ -1,0 +1,17 @@
+<h1>ADDRESSES</h1>
+<div class="addresses">
+    <ng-container *ngFor="let adr of accInfo?.adress; let a=index">
+        <div class="address">
+            <h2>{{adr.fname + " " + adr.lname}}</h2>
+            <p>{{adr.address}}</p>
+            <p>{{adr.city + " " + adr.zipcode}}</p>
+            <p>{{adr.country}}</p>
+            <h4>Phone:{{adr.phone}}</h4>
+            <button class="delAddr" (click)="deleteAddr(a)">DELETE</button>
+        </div>
+    </ng-container>
+    <div class="addNew" (click)="openDialog()">
+        <p class="plus">+</p>
+        <p>NEW ADDRESS</p>
+    </div>
+</div>
